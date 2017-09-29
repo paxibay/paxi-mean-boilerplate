@@ -1,0 +1,144 @@
+// =================================================================================
+// panels.less
+.panel-heading {
+    font-family: @headings-font-family;
+}
+
+// =================================================================================
+// type.less
+
+.text-success {
+  .text-emphasis-variant(@brand-success);
+}
+.text-info {
+  .text-emphasis-variant(@brand-info);
+}
+.text-warning {
+  .text-emphasis-variant(@brand-warning);
+}
+.text-danger {
+  .text-emphasis-variant(@brand-danger);
+}
+
+
+// =================================================================================
+// tables.less
+
+.table-striped {
+  > tbody > tr:nth-child(odd) {
+    background-color: transparent;
+  }
+  > tbody > tr:nth-child(even) {
+    background-color: @table-bg-accent;
+  }
+}
+
+.table {
+  > thead {
+    > tr {
+      > th {
+        font-size: @font-size-small;
+        color: @gray-dark;
+      }
+    }
+  }
+}
+
+
+// =================================================================================
+// forms.less
+
+.has-success {
+  .form-control-validation(@brand-success; @brand-success; @state-success-bg);
+}
+.has-warning {
+  .form-control-validation(@brand-warning; @brand-warning; @state-warning-bg);
+}
+.has-error {
+  .form-control-validation(@brand-danger; @brand-danger; @state-danger-bg);
+}
+
+.control-label {
+    margin-bottom: 2px;
+    font-weight: @font-weight-bold;
+    font-size: @font-size-small;
+    color: @gray-dark;
+}
+
+.form-control,
+input, {
+  .box-shadow(none);
+
+  &:focus {
+    .box-shadow(none);
+  }
+}
+
+.form-group {
+    margin-bottom: 6px;
+}
+
+// for IE 6-10 dropdown menu font
+select.form-control,
+select.form-control > option {
+    font-family: "Open Sans", "Times New Roman", "Lucida Grande", sans-serif;
+}
+
+
+// =================================================================================
+// buttons.less
+
+.btn:active {
+  .box-shadow(none);
+}
+
+
+// =================================================================================
+// button-groups.less
+
+.btn-group.open .dropdown-toggle {
+  .box-shadow(none);
+}
+
+
+// =================================================================================
+// navbar.less
+
+.navbar-brand {
+  font-size: @navbar-brand-font-size;
+  font-family: @navbar-brand-font-family;
+  font-weight: @navbar-brand-font-weight;
+}
+
+.navbar-nav {
+  > li > a {
+    font-size: @navbar-font-size;
+  }
+}
+
+@media (min-width: @grid-float-breakpoint) {
+  .navbar-right {
+    margin-right: auto;
+  }
+}
+
+
+// =================================================================================
+// wells.less
+
+.well {
+  .box-shadow(none);
+}
+
+
+// =================================================================================
+// close.less
+
+.close {
+  .opacity(.5);
+
+  &:hover,
+  &:focus {
+    .opacity(.8);
+  }
+}

@@ -1,0 +1,33 @@
+module.exports = [
+    {
+        "clientCode": "CELA",
+        "memberId": 12712499,
+        "logId": 14493703,
+        "ucid": null,
+        "logTypeCode": "BOL",
+        "logCategoryCode": "BOL",
+        "logDescriptionCode": "MEMX",
+        "logStatusCode": "DONE",
+        "logDeliveryCode": "N/A",
+        "logIvrModeCode": "NOIVR",
+        "question1": "Member locked because he/she did not activate account in the past 5 days.",
+        "question2": null,
+        "answer1": null,
+        "answer2": null,
+        "escalationTier": 0,
+        "isFirstContact": true,
+        "questionDate": "2015-01-06T11:52:12.843",
+        "answerDate": "2015-01-06T11:52:12.843",
+        "questionUserId": 8,
+        "questionUserCode": "ADMIN",
+        "questionUserName": "Case Manager Administrator",
+        "answerUserId": 8,
+        "answerUserCode": "ADMIN",
+        "answerUserName": "Case Manager Administrator",
+        "assignedUserId": 8,
+        "assignedUserCode": "ADMIN",
+        "assignedUserName": "Case Manager Administrator",
+        "attachments": [],
+        "followUps": []
+    }
+]

@@ -1,0 +1,93 @@
+// form grid meant to be placed inside panel
+.panel-grid {
+    .container-fixed();
+
+    > .row {
+        border-bottom: 1px solid @panel-inner-border;
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        > [class*="col-"] {
+            padding-right: 0;
+            padding-left: 0;
+            border-right: 1px solid @panel-inner-border;
+
+            &:last-child {
+                border-right: none;
+            }
+        }
+    }
+}
+
+.panel-default {
+    .panel-grid {
+        > .row {
+            border-bottom-color: @panel-default-border;
+            > [class*="col-"] {
+                border-right-color: @panel-default-border;
+            }
+        }
+    }
+}
+
+.panel-primary {
+    .panel-grid {
+        > .row {
+            border-bottom-color: @panel-primary-border;
+            > [class*="col-"] {
+                border-right-color: @panel-primary-border;
+            }
+        }
+    }
+}
+
+.panel-success {
+    .panel-grid {
+        > .row {
+            border-bottom-color: @panel-success-border;
+            > [class*="col-"] {
+                border-right-color: @panel-success-border;
+            }
+        }
+    }
+}
+
+.panel-info {
+    .panel-grid {
+        > .row {
+            border-bottom-color: @panel-info-border;
+            > [class*="col-"] {
+                border-right-color: @panel-info-border;
+            }
+        }
+    }
+}
+
+.panel-warning {
+    .panel-grid {
+        > .row {
+            border-bottom-color: @panel-warning-border;
+            > [class*="col-"] {
+                border-right-color: @panel-warning-border;
+            }
+        }
+    }
+}
+
+.panel-danger {
+    .panel-grid {
+        > .row {
+            border-bottom-color: @panel-danger-border;
+            > [class*="col-"] {
+                border-right-color: @panel-danger-border;
+            }
+        }
+    }
+}
+
+// utility
+.panel-grid-bdr-top {
+    border-top: 1px solid @panel-inner-border;
+}

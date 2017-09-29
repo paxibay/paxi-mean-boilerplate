@@ -1,0 +1,75 @@
+// form validation error box
+.validation-summary-errors {
+    margin-bottom: 6px;
+    padding: 0;
+    border: 2px solid @brand-danger;
+    border-radius: @border-radius-base;
+    background-color: #FFF;
+    font-size: 14px;
+
+    ul {
+        margin: 6px 0 6px 27px;
+        padding: 0;
+        list-style-type: disc;
+
+        li {
+            margin-bottom: 2px;
+            color: @brand-danger;
+
+            a {
+                color: @brand-danger;
+                text-decoration: none;
+
+                &:hover,
+                &:focus,
+                &:active {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+// header
+.validation-summary-header {
+    background-color: @brand-danger;
+    color: #FFF;
+    font-size: 16px;
+    padding: @padding-base-vertical @padding-base-horizontal;
+}
+
+.validation-summary-head {
+    margin: 0;
+    padding: 0;
+    color: #fff;
+}
+
+// by form submit button
+.required-fields {
+    color: @brand-danger;
+    font-size: 12px;
+}
+
+// required label tooltip
+.req-lab-left,
+.req-lab-right {
+    // image is 10 by 10px
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAALHRFWHRDcmVhdGlvbiBUaW1lAE1vbiAxOSBNYXIgMjAxMiAxMToxMzoxNyAtMDUwMIqnj6kAAAAHdElNRQfcAxMPEAmUZhmdAAAACXBIWXMAAAsSAAALEgHS3X78AAAABGdBTUEAALGPC/xhBQAAAL1JREFUeNqdkL0KwWEYxX/8fWSykK+FhHuwKHEZ7sFioJSBG+AC3IDFZrWaxGYiZEL5jHwdhbAoT52e87zn9LzveeGPMgnGFCIbKAwgptn6AOY3450bZ4jaoNKCnWbb0/iqPTQWUBR1bqGr7hpDtgOJu255Gk8wtENyBSkDgnOoq1/0jLXk9vtSRwlCMral9PqQ11lA8H9c3QTvAZYzqFUhfoSrAuUk+b5T2yeQKUBY3DOCsgKlxd3/fOHvugF4fCltDaifOAAAAABJRU5ErkJggg==);
+    background-repeat: no-repeat;
+}
+.req-lab-left {
+    background-position: 0 50%;
+}
+.req-lab-right {
+    background-position: 100% 50%;
+}
+
+// all form labels have colons
+.control-label:after {
+    content: ":";
+}
+
+// Feedback states
+.has-nginvalid {
+  .form-control-ngvalidation(@brand-danger; @brand-danger; @state-danger-bg);
+}

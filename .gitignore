@@ -1,0 +1,14 @@
+.DS_Store
+npm-debug.log
+node_modules/
+bower_components/
+bower_components/*/*
+
+www/public/compiled/
+www/public/bower_components/
+
+# Shortcut links
+/js
+/css
+/views
+/.idea

@@ -1,0 +1,8 @@
+<div ng-cloak="true" class="alert alert-danger alert-dismissable" ng-if="vm.ErrorMessages && vm.ErrorMessages.length > 0">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true" ng-click="vm.dismissErrors()">
+        <i class="icon icon-delete-2-1"></i>
+    </button>
+    <ul ng-repeat="error in vm.ErrorMessages track by $index">
+        <li>{{error}}</li>
+    </ul>
+</div>

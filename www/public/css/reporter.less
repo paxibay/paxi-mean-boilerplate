@@ -1,0 +1,36 @@
+// A Basic Responsive Grid (Plus Handy CSS3 Media Query Reporter)
+body:after {
+    content: "X-Small (<= @{screen-xs-max})";
+    font-family: @font-family-monospace;
+    font-size: 14px;
+    font-weight: bold;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 22px;
+    text-align: center;
+    color: @gray-darker;
+    background-color: @brand-danger;
+    background-color: hsla(hue(@brand-danger), saturation(@brand-danger), lightness(@brand-danger),0.5);
+}
+@media only screen and (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+    body:after {
+        content: "Small (@{screen-sm-min} to @{screen-sm-max})";
+        background-color: @brand-warning;
+        background-color: hsla(hue(@brand-warning), saturation(@brand-warning), lightness(@brand-warning),0.5);
+    }
+}
+@media only screen and (min-width: @screen-md-min) and (max-width: @screen-md-max) {
+    body:after {
+        content: "Medium (@{screen-md-min} to @{screen-md-max})";
+        background-color: @brand-info;
+        background-color: hsla(hue(@brand-info), saturation(@brand-info), lightness(@brand-info),0.5);
+    }
+}
+@media only screen and (min-width: @screen-lg-min) {
+    body:after {
+        content: "Large (>= @{screen-lg-min})";
+        background-color: @brand-success;
+        background-color: hsla(hue(@brand-success), saturation(@brand-success), lightness(@brand-success),0.5);
+    }
+}

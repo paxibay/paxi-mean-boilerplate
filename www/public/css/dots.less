@@ -1,0 +1,55 @@
+//
+// Dots
+// --------------------------------------------------
+
+.dot {
+  display: inline;
+  padding: .2em .6em .3em;
+  font-size: 75%;
+  font-weight: bold;
+  line-height: 1;
+  color: @label-color;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 50%;
+
+  // Empty dots collapse automatically (not available in IE8)
+  &:empty {
+    display: none;
+  }
+
+  // Quick fix for dots in buttons
+  .btn & {
+    position: relative;
+    top: -1px;
+  }
+}
+
+
+// Colors
+// Contextual variations (linked dots get darker on :hover)
+
+.dot-default {
+  .label-variant(@label-default-bg);
+}
+
+.dot-primary {
+  .label-variant(@label-primary-bg);
+}
+
+.dot-success {
+  .label-variant(@label-success-bg);
+}
+
+.dot-info {
+  .label-variant(@label-info-bg);
+}
+
+.dot-warning {
+  .label-variant(@label-warning-bg);
+}
+
+.dot-danger {
+  .label-variant(@label-danger-bg);
+}

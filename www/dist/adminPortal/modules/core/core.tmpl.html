@@ -1,0 +1,15 @@
+<!-- NOT USED!? -->
+<div>
+    <div ng-if="!(coreVm.location.path().indexOf('login')>0)">
+        <!-- <div ng-include="coreVm.headerUrl"></div> -->
+        <div>
+            <!-- Menu -->
+            <div class="left-navigation-menu-container col-lg-2 col-sm-3" ng-include="coreVm.menuUrl"></div>
+            <!-- main content -->
+            <session class="col-lg-10 col-sm-9 display-content" ng-view>
+
+            </session>
+        </div>
+        <footer></footer>
+    </div>
+</div>

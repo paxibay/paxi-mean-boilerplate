@@ -1,0 +1,114 @@
+// same as an A tag
+.anchor {
+  color: @link-color;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: @link-hover-color;
+    text-decoration: underline;
+  }
+
+  &:focus {
+    .tab-focus();
+  }
+}
+
+// no underline on icons within anchors
+a {
+  &:link,
+  &:visited,
+  &:hover,
+  &:focus,
+  &:active {
+    > i, em {
+      text-decoration: none;
+    }
+  }
+}
+
+// branded hyperlinks
+.link-primary {
+  .link-variant(@brand-primary);
+}
+.link-success {
+  .link-variant(@brand-success);
+}
+.link-info {
+  .link-variant(@brand-info);
+}
+.link-warning {
+  .link-variant(@brand-warning);
+}
+.link-danger {
+  .link-variant(@brand-danger);
+}
+.link-white {
+  .link-variant(#fff);
+}
+
+// background colour
+.bg-primary-dark { .bg-variant(@brand-primary-dark); }
+.bg-success-dark { .bg-variant(@brand-success-dark); }
+.bg-info-dark    { .bg-variant(@brand-info-dark); }
+.bg-warning-dark { .bg-variant(@brand-warning-dark); }
+.bg-danger-dark  { .bg-variant(@brand-danger-dark); }
+
+.bg-primary-light { .bg-variant(@brand-primary-light); }
+.bg-success-light { .bg-variant(@brand-success-light); }
+.bg-info-light    { .bg-variant(@brand-info-light); }
+.bg-warning-light { .bg-variant(@brand-warning-light); }
+.bg-danger-light  { .bg-variant(@brand-danger-light); }
+
+.bg-gray-darker  { .bg-variant(@gray-darker); }
+.bg-gray-dark    { .bg-variant(@gray-dark); }
+.bg-gray         { .bg-variant(@gray); }
+.bg-gray-light   { .bg-variant(@gray-light); }
+.bg-gray-lighter { .bg-variant(@gray-lighter); }
+
+
+// text colour
+.text-primary-dark { .text-emphasis-variant(@brand-primary-dark); }
+.text-success-dark { .text-emphasis-variant(@brand-success-dark); }
+.text-info-dark    { .text-emphasis-variant(@brand-info-dark); }
+.text-warning-dark { .text-emphasis-variant(@brand-warning-dark); }
+.text-danger-dark  { .text-emphasis-variant(@brand-danger-dark); }
+
+.text-primary-light { .text-emphasis-variant(@brand-primary-light); }
+.text-success-light { .text-emphasis-variant(@brand-success-light); }
+.text-info-light    { .text-emphasis-variant(@brand-info-light); }
+.text-warning-light { .text-emphasis-variant(@brand-warning-light); }
+.text-danger-light  { .text-emphasis-variant(@brand-danger-light); }
+
+.text-gray-darker  { .text-emphasis-variant(@gray-darker); }
+.text-gray-dark    { .text-emphasis-variant(@gray-dark); }
+.text-gray         { .text-emphasis-variant(@gray); }
+.text-gray-light   { .text-emphasis-variant(@gray-light); }
+.text-gray-lighter { .text-emphasis-variant(@gray-lighter); }
+
+.text-white { .text-emphasis-variant(#fff); }
+
+.page-title {
+    margin: 4px 0 8px 0;
+}
+
+.page-toolbar {
+    margin-top: 8px;
+}
+
+// general
+.strong, .bold {
+  font-weight: @font-weight-bold;
+}
+.weak {
+  font-weight: @font-weight-base;
+}
+.italic, .emphasize {
+  font-style: italic;
+}
+.strike {
+  text-decoration: line-through;
+}
+.underline {
+  text-decoration: underline;
+}

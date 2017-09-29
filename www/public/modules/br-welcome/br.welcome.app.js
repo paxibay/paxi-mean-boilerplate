@@ -1,0 +1,11 @@
+var searchDireciveInfo = require('./directives/br.welcome.search.directive.js')
+var commissionDireciveInfo = require('./directives/br.welcome.commission.directive.js')
+
+angular.module('br.welcomeModule', [])
+    .config(require('./br.welcome.routes.js'))
+    .controller('brWelcomeController', require('./br.welcome.controller.js'))
+    .directive('brWelcomeSearch', searchDireciveInfo.directive)
+    .controller('brWelcomeSearchController', searchDireciveInfo.controller)
+    .directive('brWelcomeCommissionRecommendation', commissionDireciveInfo.directive)
+    .controller('brWelcomeCommissionController', commissionDireciveInfo.controller)
+    .factory('brWelcomeService', require('./br.welcome.service.js'))

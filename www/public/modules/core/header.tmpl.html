@@ -1,0 +1,94 @@
+<div class="header-wrap navbar-fixed-top">
+    <header class="navbar navbar-default navbar-static-top" role="navigation" backstretch backstretch-image="">
+        <div class="container-head">
+            <div class="navbar-header">
+                <a href="" ng-click="coreVm.scrollTop()" class="navbar-brand"><b>BMS</b> Call Center Agent</a>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li ng-if="coreVm.isInCall()">
+                        <a href="#/member/profile" role="button">
+                            <i class="icon navbar-icon text-primary icon-user-2"></i> <span class="navbar-label">Username{{coreVm.userSelected}}</span></span>
+                        </a>
+                    </li>
+                    <li ng-if="!coreVm.isInCall()">
+                        <a href="" role="button" ng-click="coreVm.tryStartCall()">
+                            <i class="icon navbar-icon text-success icon-call-2"></i> <span class="navbar-label">Start Call</span></span>
+                        </a>
+                        <!-- <button type="button" class="btn btn-sm navbar-btn toolbar-session-btn btn-primary" ng-click="coreVm.tryStartCall()">Start Call</button> -->
+                    </li>
+                    <li ng-if="coreVm.isInCall()">
+                        <a href="" role="button" ng-click="coreVm.tryEndCall()">
+                            <i class="icon navbar-icon text-danger icon-call-block"></i> <span class="navbar-label">End Call</span></span>
+                        </a>
+                        <!-- <button type="button" class="btn btn-sm navbar-btn toolbar-session-btn btn-danger" ng-click="coreVm.tryEndCall()">End Call</button> -->
+                    </li>
+                    <li ng-if="coreVm.isInCall()">
+                        <floating-comment></floating-comment>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <!-- <li>
+                        <a href="#/hri/contact/info" title="HRI Contacts"><i class="icon navbar-icon text-primary icon-globe-1"></i> <span class="navbar-label hidden-md hidden-sm">HRI Contacts</span></a>
+                    </li> -->
+                    <li class="dropdown">
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" title="Quick Links">
+                            <i class="icon navbar-icon text-primary icon-link-3"></i> <span class="navbar-label hidden-md hidden-sm">Quick Links</span> <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-nav-arrow-right dropdown-nav" role="menu">
+                            <li role="menuitem">
+                                <a target="_blank" href="/Tools/AccessTool/LFAdminWidget/lwprofile?personId={{coreVm.currentMemberNumber()}}">
+                                    CM - Case Manager
+                                </a>
+                            </li>
+                            <li role="menuitem">
+                                <a target="_blank" href="/Tools/AccessTool/LFAdminWidget/lwprofile?personId={{coreVm.currentMemberNumber()}}">
+                                    BOL - Billing OnLine
+                                </a>
+                            </li>
+                           <!--  <li role="menuitem">
+                                <a target="_blank" href="/Tools/AccessTool/LFAdminWidget/lwprofile?personId={{coreVm.currentMemberNumber()}}">
+                                    LifeWorks
+                                </a>
+                            </li>
+                            <li role="menuitem"><a href="https://login.salesforce.com/" target="_blank">Salesforce</a></li> -->
+                        </ul>
+                    </li>
+                    <!-- <li class="dropdown">
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" title="Current Call Context: {{coreVm.currentContext}}">
+                            <i class="icon navbar-icon text-primary icon-marker-2"></i> <span class="navbar-label hidden-sm">{{coreVm.currentContext}}</span> <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-nav-arrow-right dropdown-nav" role="menu">
+                            <li class="head">
+                                <div class="head-title-sm">Current Call Context:</div>
+                            </li>
+                            <li role="menuitem" ng-click="coreVm.changeContext('New York', 'HRINY')" ng-class="{'active': coreVm.currentContext == 'New York'}"><a href="">New York</a></li>
+                            <li role="menuitem" ng-click="coreVm.changeContext('New Jersey', 'HRINJ')" ng-class="{'active': coreVm.currentContext == 'New Jersey'}"><a href="">New Jersey</a></li>
+                        </ul>
+                    </li> -->
+                    <li class="dropdown">
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" title="User: {{ coreVm.userName }}">
+                            <i class="icon navbar-icon text-primary icon-profile-1"></i> <span class="navbar-label hidden-sm">{{ coreVm.userName }}</span> <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-nav-arrow-right dropdown-nav" role="menu">
+                            <li><a href="#" ng-click='coreVm.signout()'>Sign Out</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div class="container-head">
+        <div class="toolbar-session-wrapper" ng-show="coreVm.isInCall()">
+            <case-cancel></case-cancel>
+            <member-header></member-header>
+        </div>
+    </div>
+
+</div>

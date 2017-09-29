@@ -1,0 +1,144 @@
+// navbar icons
+.brand-icon {
+    margin-left: 8px;
+    font-size: 22px;
+}
+.navbar-icon {
+    font-size: 1.5em;
+    vertical-align: -0.2em;
+    // color: @brand-primary;
+}
+.navbar-label {
+    margin-left: 2px;
+}
+
+// dropdown sub menu support
+.dropdown-submenu {
+  position: relative;
+}
+
+.dropdown-submenu > .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -1px;
+  margin-left: -1px;
+}
+
+.dropdown-submenu > a:after {
+  position: absolute;
+  display: inline-block;
+  right: @caret-width-base;
+  height: auto;
+  content: ">";
+  font-weight: 300;
+  color: #777777;
+}
+
+.dropdown-submenu:hover,
+.dropdown-submenu:focus {
+  background-color: @component-active-bg;
+  > .dropdown-menu {
+    display: block;
+  }
+  > a {
+    color: @gray-lighter;
+  }
+  > a:after {
+    color: @gray-lighter;
+  }
+}
+
+.dropdown-submenu.pull-left {
+  float: none;
+}
+
+.dropdown-submenu.pull-left > .dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+}
+
+// dropdown mega menu support
+.mega-menu {
+  .nav,
+  .collapse,
+  .mega-dropdown,
+  .mega-dropdown-full {
+    position: static;
+  }
+
+  // regular mega dropdown
+  .mega-dropdown .dropdown-menu {
+    left: auto;
+    width: auto;
+  }
+  // full width mega dropdown
+  .mega-dropdown-full .dropdown-menu {
+    left: @padding-base-horizontal;
+    right: @padding-base-horizontal;
+  }
+  // non-fluid container
+  .container {
+    position: relative;
+  }
+  // content of dropdown
+  .mega-content {
+    padding: @padding-base-horizontal;
+    margin: 0;
+  }
+
+  // dropdown submenu
+  .mega-submenu {
+    list-style: none;
+    border-right: 1px solid #D9D9D9;
+
+    // remove last border
+    &:last-child {
+      border-right: 0;
+    }
+    // items
+    li {
+      // links
+      > a {
+        display: block;
+        padding: 5px;
+
+        &:hover,
+        &:active {
+          color: @component-active-color;
+          background-color: @component-active-bg;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+// overrides for loading-bar.css
+#loading-bar .bar {
+  background: @brand-primary-light;
+}
+
+#loading-bar .peg {
+  box-shadow: @brand-primary-light 1px 0 6px 1px;
+}
+
+#loading-bar-spinner .spinner-icon {
+  border-top-color:  @brand-primary-light;
+  border-left-color: @brand-primary-light;
+}
+
+.navlist {
+/*  -webkit-box-shadow: 0 0 6px rgba(3,3,3,0.6);
+  box-shadow: 0 0 6px rgba(9,9,9,0.6);
+*/  
+  position: fixed;
+  left: 0;
+  height: 100%;
+  min-height: 100%;
+}
+.navlist-items {
+  .backface-visibility(hidden);
+}
+.navbar-collapse {
+  .backface-visibility(hidden);
+}

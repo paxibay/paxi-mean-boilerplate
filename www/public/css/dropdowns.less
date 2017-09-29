@@ -1,0 +1,118 @@
+// duplicate but without ul specific styles
+.dropdown-menu-duplicate {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: @zindex-dropdown;
+    display: none; // none by default, but block on "open" of the menu
+    float: left;
+    min-width: 160px;
+    padding: @padding-base-vertical 0;
+    margin: 2px 0 0; // override default ul
+    list-style: none;
+    font-size: @font-size-base;
+    text-align: left; // Ensures proper alignment if parent has it changed (e.g., modal footer)
+    background-color: @dropdown-bg;
+    border: 1px solid @dropdown-fallback-border; // IE8 fallback
+    border: 1px solid @dropdown-border;
+    border-radius: @border-radius-base;
+    .box-shadow(0 6px 12px rgba(0,0,0,.175));
+    background-clip: padding-box;
+}
+
+// extend .dropdown-menu
+.dropdown-nav {
+    .head {
+      border-bottom: 1px solid @list-group-border;
+      .clearfix();
+
+      .head-title-sm {
+        padding: @padding-small-vertical @padding-small-horizontal;
+        font-size: @font-size-small;
+        color: @gray-light;
+      }
+      .head-title-md {
+        padding: @padding-small-vertical @padding-small-horizontal;
+        font-size: @font-size-base;
+        color: @gray-light;
+      }
+    }
+
+    .foot {
+      border-top: 1px solid @list-group-border;
+
+      > a {
+        display: block;
+        padding: @padding-small-vertical @padding-small-horizontal;
+        text-align: center;
+      }
+    }
+
+    // list group
+    .notif-group-item-heading {
+      small {
+        float: right;
+      }
+    }
+}
+
+// navbar dropdown badges
+.dropdown-badges > li > a > .badge {
+  margin-top: 2px;
+  position: absolute;
+  right: 3px;
+}
+
+// dropdowns with arrows
+.dropdown-nav-arrow-left,
+.dropdown-nav-arrow-right {
+  margin-top: 3px !important;
+
+  &:before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: -20px;
+    border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) @dropdown-border;
+    border-style: solid;
+    border-width: 10px;
+  }
+  &:after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: -18px;
+    border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) @dropdown-bg;
+    border-style: solid;
+    border-width: 9px;
+  }
+}
+
+@media @active-bp-down {
+    .dropdown-nav-arrow-left,
+    .dropdown-nav-arrow-right {
+        &:before, &:after {
+            display: none !important;
+        }
+    }
+}
+
+// top right
+.dropdown-nav-arrow-right {
+  &:before {
+    right: 13px;
+  }
+  &:after {
+    right: 14px;
+  }
+}
+
+// top left
+.dropdown-nav-arrow-left {
+  &:before {
+    left: 13px;
+  }
+  &:after {
+    left: 14px;
+  }
+}

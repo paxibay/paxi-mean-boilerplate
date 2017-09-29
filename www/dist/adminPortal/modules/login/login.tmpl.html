@@ -1,0 +1,214 @@
+<div backstretch backstretch-image="login" class="container login-container" ng-if="coreVm.location.path().indexOf('login')>0">
+    <div class="login-box depth-2 animated fadeIn">
+        <div class="container-fluid">
+            <div class="row login-header">
+                <div class="col-sm-4">
+                    <div class="login-logo">
+                        <img ng-src="{{vm.imageSrc}}/brand/morneau.png" alt="Morneau Shepell" width="238" height="67">
+                    </div>
+                </div>
+                <div class="col-sm-8">
+                    <h1 class="login-title" ng-bind="vm.title"></h1>
+                </div>
+            </div>
+            <div class="row login-content">
+                <div class="col-sm-4">
+                    <div class="space-pax">
+                        <div>
+                            <form novalidate name="form" ng-submit="vm.login()">
+                                <div class="form-group">
+                                    
+                                    <label class="control-label" for="username"><i class="icon-person-1"></i><strong>Agent ID</strong></label>
+                                    <input class="form-control" focus-me="true" id="username" name="username" type="text" ng-model="vm.username" required autofocus autocomplete="off">
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label" for="password"><strong>Password</strong></label>
+                                    <input class="form-control" id="password" name="password" type="password" ng-model="vm.password" required>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" ng-disabled="vm.isTryingToLogin()" class="btn btn-primary btn-block">
+                                        <span ng-hide="vm.isTryingToLogin()">Sign In</span>
+                                        <span ng-show="vm.isTryingToLogin()"><i class="icon icon-fw icon-refresh icon-spin"></i> Processing...</span>
+                                    </button>
+                                    <div class="space-mtx text-center">
+                                        <a href="#/account/forgotpassword">Forgot your password?</a>
+                                    </div>
+                                </div>
+                            </form>
+
+                            <div class="text-center" ng-show="vm.loginStatus">
+                                <span class="text-danger"><i class="icon icon-alert-1"></i> {{vm.loginStatus}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-8">
+                    <div class="space-pax">
+                        <h3 class="space-mtn" ng-bind="vm.messages[0].title"></h3>
+                        <p ng-bind-html="vm.messages[0].message"></p>
+
+                        <h3 ng-bind="vm.messages[1].title"></h3>
+                        <p ng-bind="vm.messages[1].message"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="row login-footer">
+                <div class="col-sm-12">
+                    <footer class="footer">
+                        <nav class="legal-menu">
+                            <ul class="menu">
+                                <li><a target="_blank" href="http://www.morneaushepell.com/ca-en/privacy-policy">Privacy</a></li>
+                                <li><a target="_blank" href="http://www.morneaushepell.com/ca-en/terms-use">Terms of Use</a></li>
+                                <li><a target="_blank" href="http://www.morneaushepell.com/ca-en/accessibility" class="last">Accessibility</a></li>
+                            </ul>
+                        </nav>
+                        <div class="copyright">&copy; 1996-2015 Morneau Shepell Ltd</div>
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <div backstretch backstretch-image="login" class="container login-container" ng-if="coreVm.location.path().indexOf('login')>0">
+    <div class="login-box depth-2 animated fadeIn">
+        <div class="container-fluid">
+            <div class="row login-header">
+                <div class="col-sm-4">
+                    <div class="login-logo">
+                        <img ng-src="{{vm.imageSrc}}/brand/morneau.png" alt="Morneau Shepell" width="238" height="67">
+                    </div>
+                </div>
+                <div class="col-sm-8">
+                    <h1 class="login-title" ng-bind="vm.title"></h1>
+                </div>
+            </div>
+            <div class="row login-content">
+                <div class="col-sm-12">
+                    <div class="space-pax">
+                        <div class="row space-pbs">
+                            <div class="col-sm-12">
+                                <h3 class="space-mtn">Forgot Password</h3>
+                                <p>Enter your e-mail address to reset your password. You may need to check your spam folder. </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-8">
+                                <form novalidate name="form" class="form-horizontal" xg-submit="vm.submitForgotPassword()">
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-2" for="email"><strong>E-mail</strong></label>
+                                        <div class="col-sm-10">
+                                            <input class="form-control" focus-me="true" id="email" name="email" type="email" xg-model="vm.email" required autocomplete="off">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-offset-2 col-sm-10">
+                                            <button type="submit" xg-disabled="vm.isProcessing()" class="btn btn-primary">
+                                                <span xg-hide="vm.isProcessing()">Send password reset token</span>
+                                                <span xg-show="vm.isProcessing()"><i class="icon icon-fw icon-refresh icon-spin"></i> Processing...</span>
+                                            </button>
+                                            <a class="btn btn-link" href="#/login">Cancel</a>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="space-mty" xg-show="vm.forgotStatus">
+                                    <span class="text-danger"><i class="icon icon-alert-1"></i> {{vm.forgotStatus}}</span>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <h3 class="space-mtn text-success"><i class="icon icon-mail-lock"></i> Password activation link e-mail sent.</h3>
+                                <p>Thank you. An e-mail has been sent. Check your inbox in a few minutes to retrieve the instructions to reset your password. </p>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <h3 class="space-mtn text-warning"><i class="icon icon-mail-attention"></i> Whoops - Your activation link has expired.</h3>
+                                <p>Hi there! It looks like your activation link has expired. You’re likely in one of the following situations:</p>
+                                <ul>
+                                    <li>You forgot your password. Please visit the <a href="#/account/forgotpassword">Forgot password</a> page.</li>
+                                    <li>If you experience any other issues, please contact Tech Support at <a href="mailto:tech-support@site.com">tech-support@site.com</a>.</li>
+                                </ul>
+                                <p>Thank you.</p>
+                            </div>
+                        </div>
+
+
+                        <div class="row space-pbs">
+                            <div class="col-sm-12">
+                                <h3 class="space-mtn">Change Password</h3>
+                                <p>Please replace your current password with a more secure and memorable new password.</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-8">
+                                <form novalidate name="form" class="form-horizontal" xg-submit="vm.submitChangePassword()">
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-4" for="email"><strong>E-mail</strong></label>
+                                        <div class="col-sm-8">
+                                            <p id="email" class="form-control-static">email@site.com</p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-4" for="OldPassword"><strong>Current password</strong></label>
+                                        <div class="col-sm-8">
+                                            <input class="form-control" focus-me="true" id="OldPassword" name="OldPassword" type="text" xg-model="vm.OldPassword" required autocomplete="off">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-4" for="NewPassword"><strong>New password</strong></label>
+                                        <div class="col-sm-8">
+                                            <input class="form-control" id="NewPassword" name="NewPassword" type="text" xg-model="vm.NewPassword" password-popover required autocomplete="off">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-4" for="ConfirmPassword"><strong>Confirm password</strong></label>
+                                        <div class="col-sm-8">
+                                            <input class="form-control" id="ConfirmPassword" name="ConfirmPassword" type="text" xg-model="vm.ConfirmPassword" required autocomplete="off">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-offset-4 col-sm-8">
+                                            <button type="submit" xg-disabled="vm.isProcessing()" class="btn btn-primary">
+                                                <span xg-hide="vm.isProcessing()">Update</span>
+                                                <span xg-show="vm.isProcessing()"><i class="icon icon-fw icon-refresh icon-spin"></i> Processing...</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="space-mty" xg-show="vm.forgotStatus">
+                                    <span class="text-danger"><i class="icon icon-alert-1"></i> {{vm.forgotStatus}}</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row login-footer">
+                <div class="col-sm-12">
+                    <footer class="footer">
+                        <nav class="legal-menu">
+                            <ul class="menu">
+                                <li><a target="_blank" href="http://www.morneaushepell.com/ca-en/privacy-policy">Privacy</a></li>
+                                <li><a target="_blank" href="http://www.morneaushepell.com/ca-en/terms-use">Terms of Use</a></li>
+                                <li><a target="_blank" href="http://www.morneaushepell.com/ca-en/accessibility" class="last">Accessibility</a></li>
+                            </ul>
+                        </nav>
+                        <div class="copyright">&copy; 1996-2015 Morneau Shepell Ltd</div>
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+ -->

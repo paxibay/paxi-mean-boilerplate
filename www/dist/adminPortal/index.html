@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html ng-app="BrokerPortal" class="bg-cover" ng-controller="coreController as coreVm">
+
+<head>
+    <meta charset="utf-8">
+    <title>Call Center Agent</title>
+
+    <!-- favicon for multiple browser types -->
+    <link rel="apple-touch-icon" href="img/favicon/touchicon.png">
+    <link rel="icon" href="img/favicon/favicon.png">
+    <!--[if IE]><link rel="shortcut icon" href="img/favicon/favicon.ico"><![endif]-->
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="img/favicon/touchicon.png">
+    <!-- end favicon -->
+
+    <!-- google fonts -->
+    <link href='//fonts.googleapis.com/css?family=Roboto:300,400,300italic,400italic|Open+Sans:400,600,400italic,600italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="css/app.min.css"/>
+</head>
+
+<body id="top">
+    <div>
+        <ms-login></ms-login>
+        <div id="blocker-page-box" class="blocker-page-box" style="display:none;">
+            <h1 class="blocker-page-title"><img class="space-mby" src="img/icons/spinner-page.gif" width="25" height="25" alt=""> Loading...</h1>
+        </div>
+        <div id="navbar-state" ng-if="!(coreVm.location.path().indexOf('login')>0)" ng-class="{'navbar-fixed': !(coreVm.location.path().indexOf('login')>0)">
+            <!-- <div class="section-header" ng-include="coreVm.headerUrl"></div> -->
+            <div class="container-site">
+                <div class="section-navigation" ng-class="{'lock-visibility': coreVm.isOpenMainMenu}" ng-include="coreVm.menuUrl"></div>
+                <div class="section-content" ng-class="{'section-content-after-menu': coreVm.isOpenMainMenu}">
+                    <error-message></error-message>
+                    
+                    <div session class="section-session" ng-view></div>
+                </div>
+            </div>
+        </div>
+        <!-- <admin-portal></admin-portal> -->
+        <script>
+        var userisset = true;
+        // window['livespell___installPath'] = 'http://localhost/spellcheck';
+        </script>
+        <script src="js/app.min.js"></script>
+
+
+        <!-- <script src="./bower_components/jquery-backstretch/jquery.backstretch.js"></script> -->
+        <!--<script src="./modules_external/billing/billing.module.js"></script>
+
+    <script src="./modules/billingWidget/scripts/scripts.js"></script>
+    <script src="./modules/billingWidget/scripts/templates.js"></script>
+ -->
+        <!-- <script src="./modules_external/billing/billing.module.js"></script>
+<script src="./modules_external/billing/billing.module.js"></script> -->
+
+        <!-- <script src="scripts/scripts.js" type="text/javascript"></script>
+<script src="scripts/templates.js" type="text/javascript"></script>
+ -->
+
+    </div>
+</html>

@@ -1,0 +1,291 @@
+// Duplicate tables as divs (data-table = dable)
+
+// <div class="dable dable-hover dable-sm">
+//     <div class="dable-header">
+//         <div class="dable-row">
+//             <div class="col-sm-3"><span>Last Name</span></div>
+//             <div class="col-sm-3"><span>First Name</span></div>
+//             <div class="col-sm-2"><span>EE #</span></div>
+//             <div class="col-sm-2"><span>Birth Date</span></div>
+//             <div class="col-sm-2"><span>SIN / SSN</span></div>
+//         </div>
+//     </div>
+//     <div class="dable-body">
+//         <div class="dable-row cursor-pointer">
+//             <div class="col-sm-3 div-nowrap" title="Smith"><a href="" ng-click="vm.selectMember(member)"><strong>Smith</strong></a></div>
+//             <div class="col-sm-3 div-nowrap" title="Jacob">Jacob</div>
+//             <div class="col-sm-2" title="J00421300">J00421300</div>
+//             <div class="col-sm-2">22 September 1949</div>
+//             <div class="col-sm-2">11-22-3333</div>
+//         </div>
+//     </div>
+// </div>
+
+.dable {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: @line-height-computed;
+    background-color: @table-bg;
+    .clearfix();
+
+    // Account for multiple tbody instances
+    > .dable-body + .dable-body {
+        border-top: 2px solid @table-border-color;
+    }
+
+    // Nesting
+    .dable {
+        background-color: @body-bg;
+    }
+}
+
+// containers
+.dable-header,
+.dable-body,
+.dable-footer {
+    // .container-fixed();
+    margin-right: auto;
+    margin-left: auto;
+    padding-left:  (@grid-gutter-width / 2);
+    padding-right: (@grid-gutter-width / 2);
+    .clearfix();
+}
+
+// row
+.dable-row {
+    // .make-row();
+    margin-left:  (@grid-gutter-width / -2);
+    margin-right: (@grid-gutter-width / -2);
+    .clearfix();
+
+    // columns
+    > div {
+        min-height: 30px;
+        vertical-align: top;
+        border-top: 1px solid @table-border-color;
+    }
+}
+
+// Bottom align for column headings
+.dable-header > .dable-row > div {
+    vertical-align: bottom;
+    border-top: 0 none transparent;
+    border-bottom: 1px solid @table-border-color;
+    font-weight: bold;
+    font-size: @font-size-small;
+    color: @gray-dark;
+}
+
+// bordered version
+.dable-bordered {
+    border-top: 1px solid @table-border-color;
+    border-bottom: 1px solid @table-border-color;
+    border-left: 1px solid @table-border-color;
+
+    > .dable-header,
+    > .dable-body,
+    > .dable-footer {
+        > .dable-row {
+            > div {
+                border-right: 1px solid @table-border-color;
+            }
+        }
+    }
+}
+
+// zebra-striping
+.dable-striped > .dable-body > .dable-row:nth-child(even) {
+    background-color: @table-bg-accent;
+}
+
+// hover effect
+.dable-hover > .dable-body > .dable-row:hover {
+    background-color: @table-bg-hover;
+}
+
+// dable cell padding other then default or condensed
+.dable-xl {
+    .dable-row {
+        > div {
+            padding: 12px;
+        }
+    }
+}
+
+.dable-lg {
+    .dable-row {
+        > div {
+            padding: 10px;
+        }
+    }
+}
+
+// default
+.dable {
+    .dable-row {
+        > div {
+            padding: @table-cell-padding;
+        }
+    }
+}
+
+.dable-md {
+    .dable-row {
+        > div {
+            padding: 8px;
+        }
+    }
+}
+
+.dable-sm {
+    .dable-row {
+        > div {
+            padding: 6px;
+        }
+    }
+}
+
+// condensed
+.dable-condensed {
+    .dable-row {
+        > div {
+            padding: @table-condensed-cell-padding;
+        }
+    }
+}
+
+.dable-xs {
+    .dable-row {
+        > div {
+            padding: 4px;
+        }
+    }
+}
+
+.dable-xxs {
+    .dable-row {
+        > div {
+            padding: 2px;
+        }
+    }
+}
+
+// none
+.dable-no {
+    .dable-row {
+        > div {
+            padding: 0;
+        }
+    }
+}
+
+// table cell padding other then default or condensed
+.table-xl {
+    > thead,
+    > tbody,
+    > tfoot {
+        > tr {
+            > th,
+            > td {
+                padding: 12px;
+            }
+        }
+    }
+}
+
+.table-lg {
+    > thead,
+    > tbody,
+    > tfoot {
+        > tr {
+            > th,
+            > td {
+                padding: 10px;
+            }
+        }
+    }
+}
+
+// default
+.table-md {
+    > thead,
+    > tbody,
+    > tfoot {
+        > tr {
+            > th,
+            > td {
+                padding: 8px;
+            }
+        }
+    }
+}
+
+.table-sm {
+    > thead,
+    > tbody,
+    > tfoot {
+        > tr {
+            > th,
+            > td {
+                padding: 6px;
+            }
+        }
+    }
+}
+
+// condensed
+.table-xs {
+    > thead,
+    > tbody,
+    > tfoot {
+        > tr {
+            > th,
+            > td {
+                padding: 4px;
+            }
+        }
+    }
+}
+
+.table-xxs {
+    > thead,
+    > tbody,
+    > tfoot {
+        > tr {
+            > th,
+            > td {
+                padding: 2px;
+            }
+        }
+    }
+}
+
+// none
+.table-no {
+    > thead,
+    > tbody,
+    > tfoot {
+        > tr {
+            > th,
+            > td {
+                padding: 0;
+            }
+        }
+    }
+}
+
+// div - no content wrapping
+.div-nowrap {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+// td/th - no content wrapping
+.cell-nowrap {
+    max-width: 1px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
